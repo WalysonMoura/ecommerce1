@@ -33,4 +33,14 @@ export const siteConfig = {
     github: 'https://github.com/shadcn/ui',
     docs: 'https://ui.shadcn.com',
   },
+  banners: [
+    {
+      name: 'wizen-prime.png',
+      href: '#',
+    },
+    {
+      name: 'wizen-prime.png',
+      href: '#',
+    },
+  ],
 };

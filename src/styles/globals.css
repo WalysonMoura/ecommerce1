@@ -35,7 +35,7 @@
 
     --radius: 0.5rem;
   }
-
+  /*
   .dark {
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
@@ -68,6 +68,29 @@
 
     --radius: 0.5rem;
   }
+  */
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+  
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 @layer base {
@@ -76,6 +99,6 @@
   }
   body {
     @apply bg-background text-foreground;
-    font-feature-settings: 'rlig' 1, 'calt' 1;
+    font-feature-settings: "rlig" 1, "calt" 1;
   }
 }

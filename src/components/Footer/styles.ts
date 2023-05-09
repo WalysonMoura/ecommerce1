@@ -1,9 +1,5 @@
-import { styled } from "../../styles";
+import { styled } from "styled-components";
 
-export const FooterContainer = styled("footer", {})
-export const ImportantInformation = styled("section", {})
 
-export const SociaMedia = styled("section", {})
-export const Menu = styled("section", {})
-export const PaymentMethods = styled("section", {})
-export const Stamps = styled("section", {})
+export const FooterContainer = styled.footer`
+`

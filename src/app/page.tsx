@@ -1,9 +1,8 @@
-import Link from 'next/link';
-import SliderBanners from '../components/sliderBanners';
-import { siteConfig } from '../config/site';
-import { buttonVariants } from '../components/ui/button';
-
-
+import Link from "next/link";
+import SliderBanners from "../components/sliderBanners";
+import { siteConfig } from "../config/site";
+import { buttonVariants } from "../components/ui/button";
+import { Video } from "@/components/Video";
 
 export default function IndexPage() {
   return (
@@ -18,13 +17,14 @@ export default function IndexPage() {
           into your apps. Free. Open Source. And Next.js 13 Ready.
         </p>
       </div>
+<Video/>
       <SliderBanners />
       <div className="flex gap-4">
         <Link
           href={siteConfig.links.docs}
           target="_blank"
           rel="noreferrer"
-          className={buttonVariants({ size: 'lg' })}
+          className={buttonVariants({ size: "lg" })}
         >
           Documentation
         </Link>
@@ -33,7 +33,7 @@ export default function IndexPage() {
           target="_blank"
           rel="noreferrer"
           href={siteConfig.links.github}
-          className={buttonVariants({ variant: 'outline', size: 'lg' })}
+          className={buttonVariants({ variant: "outline", size: "lg" })}
         >
           GitHub
         </Link>
