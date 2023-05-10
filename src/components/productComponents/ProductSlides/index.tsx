@@ -10,22 +10,20 @@ import "swiper/css/navigation";
 
 export function ProductSlides() {
   return (
-    <Style.ProductSlidesContainer>
-      <Style.SlidesContainer
-        slidesPerView={3}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-      >
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-      </Style.SlidesContainer>
-    </Style.ProductSlidesContainer>
+    <Style.SlidesContainer
+      slidesPerView={3}
+      spaceBetween={30}
+      pagination={{
+        clickable: true,
+      }}
+    >
+      <CardProduct key="" />
+      <CardProduct key="" />
+      <CardProduct key="" />
+      <CardProduct key="" />
+      <CardProduct key="" />
+      <CardProduct key="" />
+      <CardProduct key="" />
+    </Style.SlidesContainer>
   )
 }
