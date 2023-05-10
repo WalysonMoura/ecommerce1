@@ -2,8 +2,13 @@
 
 import * as React from "react"
 import Link from "next/link"
+//import { getPublishedBlogPosts } from "@/services/notion"
+//import { useQuery } from "react-query"
 
+//import { BlogPost } from "@/types/blogPost"
+import { cn } from "@/lib/utils"
 
+import { Icons } from "../icons"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,8 +18,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "../ui/navigation-menu"
-import { Icons } from "../icons"
-import { cn } from "@/lib/utils"
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -55,6 +58,7 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export function DesktopMenu() {
+  
   return (
     <NavigationMenu>
       <NavigationMenuList>
@@ -88,6 +92,20 @@ export function DesktopMenu() {
               <ListItem href="/docs/primitives/typography" title="Typography">
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
+{/** 
+              {posts &&
+                posts.map((post: BlogPost) => (
+                  <ListItem
+                    key={post.id}
+                    href="/docs/primitives/typography"
+                    title={post.title}
+                  >
+                    {post.description.length > 50
+                      ? `${post.description.substring(0, 50)}...`
+                      : post.description}
+                  </ListItem>
+                ))}
+                */}
             </ul>
           </NavigationMenuContent>
         </NavigationMenuItem>

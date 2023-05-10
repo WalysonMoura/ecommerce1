@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { styled } from "styled-components"
 
 export const VideoContainer = styled.section`
   position: relative;
@@ -11,7 +11,11 @@ export const VideoContainer = styled.section`
   backdrop-filter: blur(5.4px);
   -webkit-backdrop-filter: blur(5.4px);
   border: 1px solid rgba(255, 255, 255, 0.13);
-
+  .play-containner {
+    border-radius: 16px;
+    background: #e0e0e0;
+    box-shadow: 34px 34px 69px #bebebe, -34px -34px 69px #ffffff;
+  }
   .play-button {
     position: absolute;
     top: 50%;
@@ -31,4 +35,4 @@ export const VideoContainer = styled.section`
     color: #fff; /* Cor do ícone de play */
     font-size: 32px; /* Ajuste o tamanho do ícone conforme necessário */
   }
-`;
+`

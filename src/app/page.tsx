@@ -1,12 +1,16 @@
-import Link from "next/link";
-import SliderBanners from "../components/sliderBanners";
-import { siteConfig } from "../config/site";
-import { buttonVariants } from "../components/ui/button";
-import { Video } from "@/components/Video";
+import Link from "next/link"
+
+import { Video } from "@/components/Video"
+import { ProductSlides } from "@/components/productComponents/ProductSlides"
+
+import SliderBanners from "../components/sliderBanners"
+import { buttonVariants } from "../components/ui/button"
+import { siteConfig } from "../config/site"
 
 export default function IndexPage() {
   return (
     <section className="container grid items-center gap-6 pb-8 pt-6 md:py-10">
+      <SliderBanners />
       <div className="flex max-w-[980px] flex-col items-start gap-2">
         <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
           Beautifully designed components <br className="hidden sm:inline" />
@@ -17,8 +21,9 @@ export default function IndexPage() {
           into your apps. Free. Open Source. And Next.js 13 Ready.
         </p>
       </div>
-<Video/>
-      <SliderBanners />
+      <Video />
+      <ProductSlides />
+
       <div className="flex gap-4">
         <Link
           href={siteConfig.links.docs}
@@ -39,5 +44,5 @@ export default function IndexPage() {
         </Link>
       </div>
     </section>
-  );
+  )
 }

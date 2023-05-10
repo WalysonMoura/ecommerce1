@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import StyledJsxRegistry from './registry';
 import { Metadata } from 'next';
 
+//import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { ThemeProvider } from '../components/theme-provider';
 import { TailwindIndicator } from '../components/tailwind-indicator';
@@ -34,6 +35,8 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
+//const queryClient = new QueryClient();
+
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <>
@@ -47,6 +50,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <StyledJsxRegistry>
+              
               <div className="relative flex min-h-screen flex-col pb-10">
                 <Header />
                 <div className="flex-1">
