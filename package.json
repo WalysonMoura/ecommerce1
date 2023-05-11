@@ -14,6 +14,7 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,mdx}\" --cache"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.14",
     "@notionhq/client": "^2.2.5",
     "@radix-ui/react-navigation-menu": "^1.1.2",
     "@radix-ui/react-slot": "^1.0.1",
@@ -38,10 +39,12 @@
     "styled-components": "^6.0.0-rc.1",
     "swiper": "^9.3.0",
     "tailwind-merge": "^1.12.0",
-    "tailwindcss-animate": "^1.0.5"
+    "tailwindcss-animate": "^1.0.5",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
+    "@types/uuid": "^9.0.1",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.40.0",
     "eslint-config-prettier": "^8.8.0",
