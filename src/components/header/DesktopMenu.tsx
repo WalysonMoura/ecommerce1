@@ -18,6 +18,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "../ui/navigation-menu"
+import { styled } from "styled-components"
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -57,6 +58,34 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ]
 
+const WizenPrimeLink = styled.a`
+  display: flex;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 0.375rem;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(4, 2, 55, 1) 0%,
+    rgba(5, 3, 63, 1) 0%,
+    rgba(5, 4, 70, 1) 0%,
+    rgba(9, 9, 121, 1) 22%,
+    rgba(2, 178, 232, 1) 58%,
+    rgba(1, 202, 248, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  padding: 1.5rem;
+  text-decoration: none;
+  outline: none;
+  &:focus {
+    box-shadow: 0 0 0.375rem rgba(0, 0, 0, 0.2);
+  }
+`;
+
 export function DesktopMenu() {
 
   return (
@@ -68,19 +97,17 @@ export function DesktopMenu() {
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
-                  <a
-                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/blog/wizen-prime"
-                  >
-                
+
+                  <WizenPrimeLink href="/blog/wizen-prime">
+                    
                     <Icons.logo className="h-8 w-8" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                    Wizen Prime
+                      Wizen Prime
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
                       A experiência VIP que você merece!
                     </p>
-                  </a>
+                  </WizenPrimeLink>
                 </NavigationMenuLink>
               </li>
               <ListItem href="/docs" title="Introduction">
