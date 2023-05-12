@@ -6,6 +6,7 @@ export default function Head() {
       <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       <meta http-equiv="X-UA-Compatible" content="ie=edge" />
       <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+      
     </>
   );
 }
