@@ -58,27 +58,27 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export function DesktopMenu() {
-  
+
   return (
     <NavigationMenu>
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Blog Wizen</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
+                    href="/blog/wizen-prime"
                   >
-                    <Icons.logo className="h-6 w-6" />
+                
+                    <Icons.logo className="h-8 w-8" />
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                    Wizen Prime
                     </div>
                     <p className="text-sm leading-tight text-muted-foreground">
-                      Beautifully designed components built with Radix UI and
-                      Tailwind CSS.
+                      A experiência VIP que você merece!
                     </p>
                   </a>
                 </NavigationMenuLink>
@@ -92,7 +92,7 @@ export function DesktopMenu() {
               <ListItem href="/docs/primitives/typography" title="Typography">
                 Styles for headings, paragraphs, lists...etc
               </ListItem>
-{/** 
+              {/** 
               {posts &&
                 posts.map((post: BlogPost) => (
                   <ListItem
