@@ -1,6 +1,9 @@
 import '../styles/globals.css';
 import StyledJsxRegistry from './registry';
-import { Metadata } from 'next';
+import { Metadata } from 'next'
+
+import GoogleAnalytics from "@/components/molecules/GoogleAnalytics";
+import GoogleTagManager from '@/components/molecules/GoogleTagManager';
 
 //import { QueryClient, QueryClientProvider } from 'react-query';
 
@@ -38,6 +41,7 @@ interface RootLayoutProps {
 //const queryClient = new QueryClient();
 
 export default function RootLayout({ children }: RootLayoutProps) {
+  
   return (
     <>
       <html lang="pt-br" suppressHydrationWarning>
@@ -48,9 +52,11 @@ export default function RootLayout({ children }: RootLayoutProps) {
             fontSans.variable
           )}
         >
+          <GoogleTagManager />
+          <GoogleAnalytics />
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <StyledJsxRegistry>
-              
+
               <div className="relative flex min-h-screen flex-col pb-10">
                 <Header />
                 <div className="flex-1">
