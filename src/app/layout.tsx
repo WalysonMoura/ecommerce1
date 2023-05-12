@@ -16,7 +16,6 @@ import { cn } from '../lib/utils';
 import { fontSans } from '../lib/fonts';
 
 
-
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
@@ -41,7 +40,7 @@ interface RootLayoutProps {
 //const queryClient = new QueryClient();
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  
+
   return (
     <>
       <html lang="pt-br" suppressHydrationWarning>
@@ -58,6 +57,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <StyledJsxRegistry>
 
               <div className="relative flex min-h-screen flex-col pb-10">
+               
                 <Header />
                 <div className="flex-1">
                   <ButtonWhatsapp />

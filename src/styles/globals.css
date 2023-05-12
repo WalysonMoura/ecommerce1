@@ -35,6 +35,7 @@
 
     --radius: 0.5rem;
   }
+
   /*
   .dark {
     --background: 224 71% 4%;
@@ -70,34 +71,15 @@
   }
   */
 
-  .swiper {
-    width: 100%;
-    height: 100%;
-  }
 
-  .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-  
-    /* Center slide text vertically */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
 
-  .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 16px;
-  }
 }
 
 @layer base {
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;

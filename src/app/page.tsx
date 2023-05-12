@@ -1,7 +1,7 @@
 import Link from "next/link"
 
 import { Video } from "@/components/Video"
-import { ProductSlides } from "@/components/ProductComponents/ProductSlides"
+import { ProductSlides } from "@/components/ProductComponents/ProductCarousel"
 
 import SliderBanners from "../components/sliderBanners"
 import { buttonVariants } from "../components/ui/button"
