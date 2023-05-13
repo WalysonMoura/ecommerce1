@@ -57,7 +57,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <StyledJsxRegistry>
 
               <div className="relative flex min-h-screen flex-col pb-10">
-               
+
                 <Header />
                 <div className="flex-1">
                   <ButtonWhatsapp />

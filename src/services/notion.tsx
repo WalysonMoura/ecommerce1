@@ -4,7 +4,7 @@ import { NotionToMarkdown } from "notion-to-md"
 import { BlogPost, PostPage } from "../types/blogPost"
 
 const notionClient = new Client({ auth: process.env.NOTION_ACCESS_TOKEN })
-const n2m = new NotionToMarkdown({ notionClient })
+const n2m = new NotionToMarkdown({ notionClient: notionClient })
 
 export async function getPublishedBlogPosts(): Promise<BlogPost[]> {
   const database = process.env.NOTION_BLOG_DATABASE_ID ?? ""

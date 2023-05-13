@@ -20,6 +20,8 @@ import {
   navigationMenuTriggerStyle,
 } from "../../ui/navigation-menu"
 import * as Style from "./styles"
+import { BlogPost } from "@/types/blogPost"
+import { getSingleBlogPost } from "@/services/notion"
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -60,14 +62,15 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export function DesktopMenu() {
+  // @ts-ignore
+  //const posts = await getSingleBlogPost(context.params?.slug)
+
+  //if (!posts) {
+  //  throw ''
+  //}
+
   return (
     <>
-      <Style.InformationBar>
-        <Style.DiscountText>
-          Oferta Imperdível: <strong>Economize 5%</strong> com Pagamentos em
-          <strong> PIX!</strong>
-        </Style.DiscountText>
-      </Style.InformationBar>
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
@@ -97,19 +100,20 @@ export function DesktopMenu() {
                   Styles for headings, paragraphs, lists...etc
                 </ListItem>
                 {/** 
-              {posts &&
-                posts.map((post: BlogPost) => (
-                  <ListItem
-                    key={post.id}
-                    href="/docs/primitives/typography"
-                    title={post.title}
-                  >
-                    {post.description.length > 50
-                      ? `${post.description.substring(0, 50)}...`
-                      : post.description}
-                  </ListItem>
-                ))}
-                */}
+                {posts &&
+                  posts.map((post: BlogPost) => (
+                    <ListItem
+                      key={post.id}
+                      href="/docs/primitives/typography"
+                      title={post.title}
+                    >
+                      {post.description.length > 50
+                        ? `${post.description.substring(0, 50)}...`
+                        : post.description}
+                    </ListItem>
+                  ))}
+
+*/}
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
@@ -136,7 +140,7 @@ export function DesktopMenu() {
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
-          
+
         </NavigationMenuList>
       </NavigationMenu>
     </>
