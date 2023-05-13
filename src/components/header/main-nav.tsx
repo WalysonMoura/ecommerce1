@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import Link from "next/link"
 
@@ -5,14 +6,17 @@ import { NavItem } from "@/types/nav"
 import { siteConfig } from "@/config/site"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
+import useIsMobile from "@/hooks/useIsMobile"
 
 interface MainNavProps {
   items?: NavItem[]
+
 }
 
 export function MainNav({ items }: MainNavProps) {
+  const isMobile = useIsMobile();
   return (
-    <div className="flex ">
+    <div className={`flex ${isMobile ? 'flex-col' : 'flex-row'}`}>
       <Link href="/" className="hidden items-center space-x-2 md:flex">
         <Icons.fullLogo className="h-10 " />
       </Link>

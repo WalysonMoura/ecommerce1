@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import Link from "next/link"
-
+import * as Style from "./styles"
 //import { getPublishedBlogPosts } from "@/services/notion"
 //import { useQuery } from "react-query"
 
@@ -19,9 +19,12 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "../../ui/navigation-menu"
-import * as Style from "./styles"
+
 import { BlogPost } from "@/types/blogPost"
 import { getSingleBlogPost } from "@/services/notion"
+
+import { siteConfig } from "@/config/site"
+import { MainNav } from "../main-nav"
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -62,6 +65,7 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export function DesktopMenu() {
+
   // @ts-ignore
   //const posts = await getSingleBlogPost(context.params?.slug)
 
@@ -73,6 +77,7 @@ export function DesktopMenu() {
     <>
       <NavigationMenu>
         <NavigationMenuList>
+          <MainNav items={siteConfig.mainNav} />
           <NavigationMenuItem>
             <NavigationMenuTrigger>Blog Wizen</NavigationMenuTrigger>
             <NavigationMenuContent>

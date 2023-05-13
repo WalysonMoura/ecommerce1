@@ -53,20 +53,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
         >
           <GoogleTagManager />
           <GoogleAnalytics />
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <StyledJsxRegistry>
-
+          <StyledJsxRegistry>
+            <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
               <div className="relative flex min-h-screen flex-col pb-10">
-
                 <Header />
+                <ButtonWhatsapp />
                 <div className="flex-1">
-                  <ButtonWhatsapp />
                   {children}
                 </div>
               </div>
               <TailwindIndicator />
-            </StyledJsxRegistry>
-          </ThemeProvider>
+            </ThemeProvider>
+          </StyledJsxRegistry>
         </body>
       </html>
     </>
