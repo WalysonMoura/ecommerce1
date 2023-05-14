@@ -1,8 +1,8 @@
-import { NextRequest,NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 
 
-const { WOOCOMMERCE_CONSUMER_KEY,WOOCOMMERCE_GRAPHQL_URL } = process.env;
+const { WOOCOMMERCE_CONSUMER_KEY, WOOCOMMERCE_GRAPHQL_URL } = process.env;
 
 
 export async function GET(request: NextRequest) {
@@ -136,14 +136,8 @@ export async function GET(request: NextRequest) {
       discountTotal: '0.00',
     },
   };
-  
-  
-  const { searchParams } = new URL(request.url);
-  const categoryName = searchParams.get('category');
-  
-  const cart = await cartData.json();
- 
-  return NextResponse.json({ cart });
+
+  return NextResponse.json({ cartData });
 }
 
 

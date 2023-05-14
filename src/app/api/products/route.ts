@@ -1,11 +1,12 @@
-import { NextRequest,NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 
 
-const { WOOCOMMERCE_CONSUMER_KEY,WOOCOMMERCE_GRAPHQL_URL } = process.env;
+const { WOOCOMMERCE_CONSUMER_KEY, WOOCOMMERCE_GRAPHQL_URL } = process.env;
 
 
 export async function GET(request: NextRequest) {
+
   const products = [
     {
       databaseId: '1',
@@ -49,10 +50,9 @@ export async function GET(request: NextRequest) {
       variations: [],
     },
   ];
-  
-  const allProducts = await products.json();
- 
-  return NextResponse.json({ allProducts });
+
+
+  return NextResponse.json({ products });
 }
 
 
@@ -62,8 +62,8 @@ export async function GET(request: NextRequest) {
 
 
 
-/*
-export async function GET(request: NextRequest) {
+
+export async function GETj(request: NextRequest) {
   const res = await fetch(WOOCOMMERCE_GRAPHQL_URL, {
     method: 'POST',
     headers: {
@@ -89,4 +89,3 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json(data);
 }
-*/

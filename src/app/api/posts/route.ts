@@ -1,5 +1,5 @@
 import { Client } from '@notionhq/client';
-import { BlogPost, PostPage } from '@/types/NotionToMarkdown';
+import { BlogPost, PostPage } from '@/types/blogPost';
 import { NotionToMarkdown } from 'notion-to-md';
 
 const notionClient = new Client({ auth: process.env.NOTION_ACCESS_TOKEN });
