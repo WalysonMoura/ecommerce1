@@ -21,12 +21,14 @@ import { Suspense } from "react";
 
 
 export async function generateStaticParams() {
-  const posts = await fetch('https://.../posts').then((res) => res.json());
- 
-  return posts.map((post) => ({
-    slug: post.slug,
+  const WOOCOMMERCE_GRAPHQL_URL = process.env.WOOCOMMERCE_GRAPHQL_URL
+  const products = await fetch(`${WOOCOMMERCE_GRAPHQL_URL}/products`).then((res) => res.json());
+
+  return products.map((product: { id: any; }) => ({
+    id: product.id,
   }));
 }
+
 
 interface ProductsProps {
   params: {
@@ -54,11 +56,6 @@ export default async function Product({ params }: ProductsProps) {
   const router = useRouter();
   const { id } = router.query;
 
-  const { data } = await client.query({
-    query: GET_SINGLE_PRODUCT,
-    variables: { slug },
-  });
-
   const data = await getProduct(id)
   const product = data?.product;
 
@@ -75,7 +72,7 @@ export default async function Product({ params }: ProductsProps) {
   );
 };
 
-async function getProduct(productId: string) {
+async function getProduct(productId: string | string[] | undefined) {
   const WOOCOMMERCE_GRAPHQL_URL = process.env.WOOCOMMERCE_GRAPHQL_URL
   const res = await fetch(`${WOOCOMMERCE_GRAPHQL_URL}/products/${productId}`);
   return res.json();
