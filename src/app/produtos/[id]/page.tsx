@@ -1,16 +1,9 @@
 
 // Styles
-import * as Styles from "./style";
+import * as Styles from "./styles";
 
 // Components
-
-
-// GraphQL
-import { GET_SINGLE_PRODUCT } from '@/utils/gql/GQL_QUERIES';
 import SingleProduct from '../components/SingleProduct';
-
-// Utilities
-import client from '@/utils/apollo/ApolloClient';
 
 // Importar o hook useRouter do Next.js
 import { useRouter } from 'next/router';
