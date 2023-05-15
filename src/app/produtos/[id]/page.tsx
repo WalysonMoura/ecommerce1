@@ -5,10 +5,6 @@ import * as Styles from "./styles";
 // Components
 import SingleProduct from '../components/SingleProduct';
 
-// Importar o hook useRouter do Next.js
-import { useRouter } from 'next/router';
-
-
 import type { Metadata, ResolvingMetadata } from 'next';
 import { Suspense } from "react";
 
@@ -30,7 +26,8 @@ export async function generateStaticParams() {
 interface ProductsProps {
   params: {
     id: string;
-  };
+  },
+  searchParams: { [id: string]: string | string[] | undefined };
 }
 
 function formatSlug(slug: string): string {
@@ -41,30 +38,24 @@ function formatSlug(slug: string): string {
 }
 
 
-type Props = {
-  params: { id: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
- 
+
 export async function generateMetadata(
-  { params, searchParams }: Props,
+  { params, searchParams }:  ProductsProps,
   parent?: ResolvingMetadata,
 ): Promise<Metadata> {
 
-  
   const formattedSlug = await formatSlug(params.id)
- 
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || [];
- 
+  //const previousImages = (await parent).openGraph?.images || [];
+
   return {
     title: formattedSlug,
     openGraph: {
-      images: ['/some-specific-page-image.jpg', ...previousImages],
+      // images: ['/some-specific-page-image.jpg', ...previousImages],
     },
   };
 }
- 
+
 
 function SkeletonProduct() {
   return (
@@ -75,10 +66,9 @@ function SkeletonProduct() {
 }
 
 // Definir o componente Page
-export default async function Product({ params }: ProductsProps) {
+export default async function Product({ params, searchParams }: ProductsProps) {
 
-  const router = useRouter();
-  const { id } = router.query;
+  const { id } = searchParams;
 
   const data = await getProduct(id)
   const product = data?.product;
