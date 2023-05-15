@@ -7,8 +7,10 @@ import * as Style from "./styles"
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { SwiperSlide } from "swiper/react";
+import { Key } from "react";
 
-export function ProductSlides() {
+export function ProductSlides({ products }: any) {
   return (
     <Style.SlidesContainer
       slidesPerView={3}
@@ -17,13 +19,11 @@ export function ProductSlides() {
         clickable: true,
       }}
     >
-      <CardProduct key="" />
-      <CardProduct key="" />
-      <CardProduct key="" />
-      <CardProduct key="" />
-      <CardProduct key="" />
-      <CardProduct key="" />
-      <CardProduct key="" />
+      {products.map((product: { id: Key | null | undefined; }) => (
+        <SwiperSlide key={product.id}>
+          <CardProduct produto={product} />
+        </SwiperSlide>
+      ))}
     </Style.SlidesContainer>
   )
 }

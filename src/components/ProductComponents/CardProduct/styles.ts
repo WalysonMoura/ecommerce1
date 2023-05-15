@@ -1,8 +1,7 @@
 import Image from "next/image"
 import { styled } from "styled-components"
-import { SwiperSlide } from "swiper/react"
 
-export const CardProductContainer = styled(SwiperSlide)`
+export const CardProductContainer = styled.div`
   height: 10rem;
   width: 8rem;
   border-radius: 18px;

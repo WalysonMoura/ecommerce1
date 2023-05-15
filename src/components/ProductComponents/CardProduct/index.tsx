@@ -2,7 +2,7 @@
 
 import * as Style from "./styles"
 
-export function CardProduct() {
+export function CardProduct({ product }) {
   return (
     <Style.CardProductContainer>
       <Style.SlideImage
